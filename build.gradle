@@ -1,0 +1,21 @@
+buildscript {
+	repositories {
+		maven {
+		 url uri('../../Maven/repo')
+		}
+	}
+
+	dependencies {
+		classpath group: 'org.sayan.home',
+		name: 'HelloWorldGradlePlugin',
+		version: '1.0.0-SNAPSHOT'
+	}
+}
+
+apply plugin: 'org.sayan.home.helloworld'
+
+task checkItOut(type: org.sayan.home.HelloWorldTask) << {
+	println("Running consumer task")
+}
+
+
